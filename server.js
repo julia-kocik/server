@@ -10,11 +10,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static(path.join(__dirname, '/public')));
-
-app.use('/user', (req, res, next) => {
+app.use('/user', (req, res) => {
     res.show('forbidden.html');
-  });
+});
 
 app.get('/', (req, res) => {
     res.show('index.html');
@@ -28,8 +26,10 @@ app.get('/about', (req, res) => {
     res.show('about.html');
 });
 
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.use((req, res) => {
-    res.show('404.html');
+    res.status(404).show('404.html');
 })
 
 app.listen(8000, () => {
