@@ -1,0 +1,8 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/julia-kocik/server.git",
+  "author": "julia-kocik <74269572+julia-kocik@users.noreply.github.com>",
+  "license": "MIT"
+}
