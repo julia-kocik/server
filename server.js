@@ -23,8 +23,8 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.render('about')
-});
+    res.render('about.hbs', { layout: 'dark' });
+  });
 
 app.get('/hello/:name', (req, res) => {
     res.render('hello', { name: req.params.name });
