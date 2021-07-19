@@ -24,10 +24,18 @@ app.get('/home', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', { layout: 'dark' });
-  });
+});
 
 app.get('/hello/:name', (req, res) => {
     res.render('hello', { name: req.params.name });
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact')
+});
+
+app.post('/contact/send-message', (req, res) => {
+    res.json(req.body);
 });
 
 app.use((req, res) => {
