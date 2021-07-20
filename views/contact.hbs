@@ -1,7 +1,7 @@
 <h2>Contact me</h2>
 <div class="isSent">
     {{#if isSent}}
-        The message has been sent!
+        The message has been sent! File {{projectDesignFile}} has been saved!
     {{/if}}
 </div>
 <div class="isError">
@@ -9,7 +9,7 @@
         You can't leave fields empty!
     {{/if}}
 </div>
-<form action="/contact/send-message" method="POST">
+<form action="/contact/send-message" method="POST" enctype="multipart/form-data">
 <label>
     Your name: <input type="text" name="author">
   </label>
@@ -21,6 +21,9 @@
   </label>
    <label>
     Message: <textarea name="message"></textarea>
+  </label>
+  <label>
+  Project design: <input type="file" name="projectDesign" accept=".jpg,.pdf,.gif,.jpeg">
   </label>
   <button type="submit">Send message</button>
 </form>
